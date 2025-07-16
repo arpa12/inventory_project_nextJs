@@ -104,6 +104,15 @@ const items = [
             // { href: '/money-transfer-remaining', label: 'Money Transfer Remaining' },
         ],
     },
+    {
+        value: 'sale',
+        title: 'Sale',
+        active: (path) => path.startsWith('/sale') || path === '/money-transfer-remaining',
+        links: [
+            { href: '/sale', label: 'Sale' },
+            // { href: '/money-transfer-remaining', label: 'Money Transfer Remaining' },
+        ],
+    },
 
     {
         value: 'settings',
