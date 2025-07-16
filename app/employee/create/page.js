@@ -134,6 +134,22 @@ export default function CategoryPage() {
                                     px={2}
                                 />
                             </Field.Root>
+
+                            <Field.Root flex="1">
+                            <Field.Label fontWeight="semibold" color="gray.700" mb={0} fontSize="sm">One Time Password</Field.Label>
+                            <Input
+                                name="password"
+                                type="password"
+                                placeholder="Enter password"
+                                size="xs"
+                                focusBorderColor="blue.500"
+                                bg="gray.50"
+                                _hover={{ bg: "white" }}
+                                _focus={{ bg: "white" }}
+                                py={1}
+                                px={2}
+                            />
+                        </Field.Root>
                         </Flex>
 
                         <Flex gap={2} direction={{ base: "column", md: "row" }}>
