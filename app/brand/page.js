@@ -2,11 +2,10 @@
 
 import {
     Box, Flex, Heading, Button, Table, Dialog, Portal, CloseButton, Field, Fieldset,
-    Input, Stack, Icon, Group, NativeSelect, Textarea
+    Input, Stack, Icon, NativeSelect, Textarea
 } from "@chakra-ui/react";
 import { FaPlus, FaEdit } from 'react-icons/fa';
 import { MdDeleteOutline } from "react-icons/md";
-
 import DashboardLayout from "@/components/layout/DashboardLayout";
 
 export default function CategoryPage() {
@@ -71,17 +70,17 @@ export default function CategoryPage() {
                                                     </Field.Root>
 
                                                     <Field.Root>
-                                                    <Field.Label>Category</Field.Label>
-                                                    <NativeSelect.Root>
-                                                        <NativeSelect.Field>
-                                                            <option value="1">Select Category</option>
-                                                            <option value="2">Electronics(CA1)</option>
-                                                            <option value="3">Shoes(CA2)</option>
-                                                            <option value="3">Fruits(CA3)</option>
-                                                        </NativeSelect.Field>
-                                                        <NativeSelect.Indicator />
-                                                    </NativeSelect.Root>
-                                                     </Field.Root>
+                                                        <Field.Label>Category</Field.Label>
+                                                        <NativeSelect.Root>
+                                                            <NativeSelect.Field>
+                                                                <option value="1">Select Category</option>
+                                                                <option value="2">Electronics(CA1)</option>
+                                                                <option value="3">Shoes(CA2)</option>
+                                                                <option value="4">Fruits(CA3)</option>
+                                                            </NativeSelect.Field>
+                                                            <NativeSelect.Indicator />
+                                                        </NativeSelect.Root>
+                                                    </Field.Root>
 
                                                     <Field.Root>
                                                         <Field.Label fontSize="sm" fontWeight="medium">Description</Field.Label>
@@ -92,7 +91,6 @@ export default function CategoryPage() {
                                                             rows={3}
                                                         />
                                                     </Field.Root>
-
                                                 </Stack>
                                             </Fieldset.Content>
                                         </Fieldset.Root>
@@ -126,45 +124,19 @@ export default function CategoryPage() {
                     <Table.Root size="md" variant="simple">
                         <Table.Header bg="gray.50">
                             <Table.Row>
-                                <Table.ColumnHeader
-                                    fontWeight="semibold"
-                                    color="gray.700"
-                                    fontSize="sm"
-                                    py={3}
-                                    px={4}
-                                    bg="blue.100"
-                                >
+                                <Table.ColumnHeader fontWeight="semibold" color="gray.700" fontSize="sm" py={3} px={4} bg="blue.100">
                                     Image
                                 </Table.ColumnHeader>
-                                <Table.ColumnHeader
-                                    fontWeight="semibold"
-                                    color="gray.700"
-                                    fontSize="sm"
-                                    py={3}
-                                    px={4}
-                                    bg="blue.100"
-                                >
+                                <Table.ColumnHeader fontWeight="semibold" color="gray.700" fontSize="sm" py={3} px={4} bg="blue.100">
                                     Name
                                 </Table.ColumnHeader>
-                                <Table.ColumnHeader
-                                    fontWeight="semibold"
-                                    color="gray.700"
-                                    fontSize="sm"
-                                    py={3}
-                                    px={4}
-                                    bg="blue.100"
-                                >
+                                <Table.ColumnHeader fontWeight="semibold" color="gray.700" fontSize="sm" py={3} px={4} bg="blue.100">
                                     Description
                                 </Table.ColumnHeader>
-                                <Table.ColumnHeader
-                                    textAlign="end"
-                                    fontWeight="semibold"
-                                    color="gray.700"
-                                    fontSize="sm"
-                                    py={3}
-                                    px={4}
-                                    bg="blue.100"
-                                >
+                                <Table.ColumnHeader fontWeight="semibold" color="gray.700" fontSize="sm" py={3} px={4} bg="blue.100">
+                                    Category
+                                </Table.ColumnHeader>
+                                <Table.ColumnHeader textAlign="end" fontWeight="semibold" color="gray.700" fontSize="sm" py={3} px={4} bg="blue.100">
                                     Action
                                 </Table.ColumnHeader>
                             </Table.Row>
@@ -179,46 +151,28 @@ export default function CategoryPage() {
                                     borderBottom={index === items.length - 1 ? "none" : "1px"}
                                     borderColor="gray.100"
                                 >
-                                    <Table.Cell
-                                        fontWeight="medium"
-                                        color="gray.800"
-                                        py={3}
-                                        px={4}
-                                        fontSize="sm"
-                                    >
+                                    <Table.Cell fontWeight="medium" color="gray.800" py={3} px={4} fontSize="sm">
                                         {item.image}
                                     </Table.Cell>
-
-                                    <Table.Cell
-                                        fontWeight="medium"
-                                        color="gray.800"
-                                        py={3}
-                                        px={4}
-                                        fontSize="sm"
-                                    >
+                                    <Table.Cell fontWeight="medium" color="gray.800" py={3} px={4} fontSize="sm">
                                         {item.name}
                                     </Table.Cell>
-
-                                    <Table.Cell
-                                        fontWeight="semibold"
-                                        color="gray.800"
-                                        fontSize="sm"
-                                        py={3}
-                                        px={4}
-                                    >
+                                    <Table.Cell fontWeight="semibold" color="gray.800" fontSize="sm" py={3} px={4}>
                                         {item.description}
                                     </Table.Cell>
-
+                                    <Table.Cell fontWeight="medium" color="gray.700" fontSize="sm" py={3} px={4}>
+                                        {item.category}
+                                    </Table.Cell>
                                     <Table.Cell textAlign="end" py={3} px={4}>
                                         <Flex justify="flex-end" gap={2}>
                                             <Button size="xs" variant="outline" color="green.700">
                                                 <Icon>
-                                                    <FaEdit  />
+                                                    <FaEdit />
                                                 </Icon>
                                             </Button>
                                             <Button size="xs" variant="outline" color="red.600">
                                                 <Icon>
-                                                    <MdDeleteOutline  />
+                                                    <MdDeleteOutline />
                                                 </Icon>
                                             </Button>
                                         </Flex>
@@ -239,29 +193,34 @@ const items = [
         image: "img 1",
         name: "Brand Smartphones",
         description: "Latest smartphones from top brands",
+        category: "Electronics(CA1)",
     },
     {
         id: 2,
         image: "img 2",
         name: "Television",
         description: "High-definition smart TVs",
+        category: "Electronics(CA1)",
     },
     {
         id: 3,
         image: "img 3",
         name: "Watches",
         description: "Stylish and smart watches",
+        category: "Accessories(CA4)",
     },
     {
         id: 4,
         image: "img 4",
         name: "Laptop",
         description: "Performance laptops for work and play",
+        category: "Electronics(CA1)",
     },
     {
         id: 5,
         image: "img 5",
         name: "Air Conditioner",
         description: "Efficient cooling with smart features",
+        category: "Electronics(CA1)",
     },
 ];

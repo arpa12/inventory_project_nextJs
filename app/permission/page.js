@@ -35,8 +35,10 @@ export default function CategoryPage() {
                             borderRadius="md"
                             fontWeight="medium"
                             fontSize="sm"
-                            leftIcon={<FaPlus />}
                         >
+                            <Icon>
+                                <FaPlus />
+                            </Icon>
                             Create Permission
                         </Button>
                     </Link>

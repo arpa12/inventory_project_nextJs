@@ -1,15 +1,14 @@
 'use client';
+
 import {
     Box, Flex, Heading, Button, Table, Dialog, Portal, CloseButton, Field, Fieldset, For,
     Input, Stack, Textarea, Icon
 } from "@chakra-ui/react";
-import { FaPlus } from 'react-icons/fa';
-
 import DashboardLayout from "@/components/layout/DashboardLayout";
-
+import { FaPlus, FaEdit } from 'react-icons/fa';
+import { MdDeleteOutline } from "react-icons/md";
 
 export default function CategoryPage() {
-
     return (
         <DashboardLayout>
             <Box p={4} bg="gray.50">
@@ -121,7 +120,7 @@ export default function CategoryPage() {
                                     px={4}
                                     bg="blue.100"
                                 >
-                                    Product
+                                    Category Name
                                 </Table.ColumnHeader>
                                 <Table.ColumnHeader
                                     fontWeight="semibold"
@@ -131,21 +130,32 @@ export default function CategoryPage() {
                                     px={4}
                                     bg="blue.100"
                                 >
-                                    Category
+                                    Category Code
                                 </Table.ColumnHeader>
                                 <Table.ColumnHeader
+                                    fontWeight="semibold"
+                                    color="gray.700"
+                                    fontSize="sm"
+                                    py={3}
+                                    px={4}
+                                    bg="blue.100"
+                                >
+                                    Description
+                                </Table.ColumnHeader>
+                                <Table.ColumnHeader
+                                    fontWeight="semibold"
+                                    color="gray.700"
+                                    fontSize="sm"
+                                    py={3}
+                                    px={4}
+                                    bg="blue.100"
                                     textAlign="end"
-                                    fontWeight="semibold"
-                                    color="gray.700"
-                                    fontSize="sm"
-                                    py={3}
-                                    px={4}
-                                    bg="blue.100"
                                 >
-                                    Price
+                                    Action
                                 </Table.ColumnHeader>
                             </Table.Row>
                         </Table.Header>
+
                         <Table.Body>
                             {items.map((item, index) => (
                                 <Table.Row
@@ -168,46 +178,47 @@ export default function CategoryPage() {
                                         color="gray.600"
                                         py={3}
                                         px={4}
+                                        fontSize="sm"
                                     >
-                                        <Box
-                                            as="span"
-                                            bg="blue.50"
-                                            color="blue.700"
-                                            px={2}
-                                            py={1}
-                                            rounded="md"
-                                            fontSize="xs"
-                                            fontWeight="medium"
-                                        >
-                                            {item.category}
-                                        </Box>
+                                        {item.code}
                                     </Table.Cell>
                                     <Table.Cell
-                                        textAlign="end"
-                                        fontWeight="semibold"
-                                        color="green.600"
-                                        fontSize="md"
+                                        color="gray.600"
                                         py={3}
                                         px={4}
+                                        fontSize="sm"
                                     >
-                                        ${item.price}
+                                        {item.description}
+                                    </Table.Cell>
+
+                                    <Table.Cell textAlign="end" py={3} px={4}>
+                                        <Flex justify="flex-end" gap={2}>
+                                            <Button size="xs" variant="outline" color="green.700">
+                                                <Icon>
+                                                    <FaEdit />
+                                                </Icon>
+                                            </Button>
+                                            <Button size="xs" variant="outline" color="red.600">
+                                                <Icon>
+                                                    <MdDeleteOutline />
+                                                </Icon>
+                                            </Button>
+                                        </Flex>
                                     </Table.Cell>
                                 </Table.Row>
                             ))}
                         </Table.Body>
                     </Table.Root>
                 </Box>
-
             </Box>
         </DashboardLayout>
     );
 }
 
 const items = [
-    { id: 1, name: "Laptop", category: "Electronics", price: 999.99 },
-    { id: 2, name: "Coffee Maker", category: "Home Appliances", price: 49.99 },
-    { id: 3, name: "Desk Chair", category: "Furniture", price: 150.0 },
-    { id: 4, name: "Smartphone", category: "Electronics", price: 799.99 },
-    { id: 5, name: "Headphones", category: "Accessories", price: 199.99 },
-
-]
+    { id: 1, name: "Electronics", code: "ELEC", description: "Devices and gadgets like phones, laptops." },
+    { id: 2, name: "Home Appliances", code: "HOME", description: "Appliances used at home." },
+    { id: 3, name: "Furniture", code: "FURN", description: "Office and home furniture." },
+    { id: 4, name: "Accessories", code: "ACCS", description: "Gadget accessories." },
+    { id: 5, name: "Stationery", code: "STAT", description: "Office and school stationery supplies." },
+];

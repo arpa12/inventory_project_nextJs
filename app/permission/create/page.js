@@ -114,19 +114,17 @@ export default function CreatePermissionPage() {
     return (
         <DashboardLayout>
             <Box p={4} bg="gray.50">
-                                    <Heading fontSize="lg" fontWeight="semibold">
-                                        Create New Permission
-                                </Heading>
-
                                     <Stack spacing={4}>
                                         <Flex gap={4} mt="15px">
                                             <Field.Root>
-                                                <Field.Label>Select User</Field.Label>
+                                                <Field.Label>Select Role</Field.Label>
                                                 <NativeSelect.Root>
                                                     <NativeSelect.Field>
-                                                        <option value="1">Option 1</option>
-                                                        <option value="2">Option 2</option>
-                                                        <option value="3">Option 3</option>
+                                                        <option value="1">Admin</option>
+                                                        <option value="2">Branch Manager</option>
+                                                        <option value="3">Warehouse Manager</option>
+                                                        <option value="4">Shopkeeper</option>
+                                                        <option value="5">Salesman</option>
                                                     </NativeSelect.Field>
                                                     <NativeSelect.Indicator />
                                                 </NativeSelect.Root>
