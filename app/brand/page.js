@@ -2,7 +2,9 @@
 
 import {
     Box, Flex, Heading, Button, Table, Dialog, Portal, CloseButton, Field, Fieldset,
-    Input, Stack, Icon, NativeSelect, Textarea
+    Input, Stack, Icon, NativeSelect, Textarea, Dialog,  For,
+    HStack,
+    Portal,
 } from "@chakra-ui/react";
 import { FaPlus, FaEdit } from 'react-icons/fa';
 import { MdDeleteOutline } from "react-icons/md";
@@ -20,7 +22,6 @@ export default function CategoryPage() {
                         </Heading>
                         <Box h={1} w={10} bg="blue.500" mt={1} rounded="full" />
                     </Box>
-
                     <Dialog.Root>
                         <Dialog.Trigger asChild>
                             <Button
