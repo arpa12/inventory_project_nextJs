@@ -2,9 +2,8 @@
 
 import {
     Box, Flex, Heading, Button, Table, Dialog, Portal, CloseButton, Field, Fieldset,
-    Input, Stack, Icon, NativeSelect, Textarea, Dialog,  For,
+    Input, Stack, Icon, NativeSelect, Textarea,  For,
     HStack,
-    Portal,
 } from "@chakra-ui/react";
 import { FaPlus, FaEdit } from 'react-icons/fa';
 import { MdDeleteOutline } from "react-icons/md";
