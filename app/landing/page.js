@@ -37,20 +37,13 @@ export default function LandingPage() {
             display="flex"
             justifyContent="center"
             alignItems="center"
-            bgGradient="linear(to-br, blue.50, purple.50, pink.50)"
+            bg="cyan.700"
+
         >
             <VStack spacing={8} textAlign="center">
-                <Heading
-                    size="3xl"
-                    bgGradient="linear(to-r, blue.600, purple.600)"
-                    bgClip="text"
-                    fontWeight="extrabold"
-                >
-                    Welcome to the App
-                </Heading>
                 <Text
                     textStyle="5xl"
-                    color="gray.600"
+                    color="white"
                     fontWeight="medium"
                 >
                     Manage your inventory, sales, and teams efficiently.
@@ -59,7 +52,7 @@ export default function LandingPage() {
                 <Dialog.Root>
                     <Dialog.Trigger asChild>
                         <Button
-                            bgGradient="linear(to-r, blue.500, purple.500)"
+                            bg="cyan.600"
                             color="white"
                             size="lg"
                             px={8}
@@ -156,7 +149,7 @@ export default function LandingPage() {
                                         </Button>
                                     </Dialog.ActionTrigger>
                                     <Button
-                                        bgGradient="linear(to-r, blue.500, purple.500)"
+                                        bg="cyan.700"
                                         color="white"
                                         size="lg"
                                         borderRadius="xl"
